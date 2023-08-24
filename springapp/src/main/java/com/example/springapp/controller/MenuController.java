@@ -23,7 +23,7 @@ public class MenuController {
         return ResponseEntity.status(HttpStatus.OK).body(success);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("get/{id}")
     public ResponseEntity<MenuItem> getMenuItem(@PathVariable int id) {
         MenuItem menuItem = menuService.getMenuItem(id);
         if (menuItem != null) {
@@ -33,7 +33,7 @@ public class MenuController {
         }
     }
 
-    @GetMapping("GetID")
+    @GetMapping("/")
     public ResponseEntity<List<MenuItem>> getAllMenuItems() {
         List<MenuItem> menuItems = menuService.getAllMenuItems();
         return ResponseEntity.status(HttpStatus.OK).body(menuItems);
